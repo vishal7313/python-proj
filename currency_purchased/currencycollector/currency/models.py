@@ -25,6 +25,7 @@ class FractionalCurrencyVariety(models.Model):
     date_added = models.DateTimeField(default=timezone.now)
     type = models.CharField(max_length=5, choices=CURRENCY_TYPE_CHOICE)
     issue = models.CharField(max_length=5, choices=ISSUE_TYPE)
+    description = models.TextField(default='')
     
     def __str__(self):
         return self.name
