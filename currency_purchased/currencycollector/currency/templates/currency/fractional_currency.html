@@ -14,7 +14,7 @@ Cuurency page
             <span> Year: {{fractional.year}} </span> </br>
             <span> Amount Paid: {{fractional.price_paid}} </span> </br>
             <span> Issue: {{fractional.issue}} </span> </br>
-            <a href="#">
+            <a href="{% url 'fractional_currency_details' fractional.id %}">
                 <button
                     type="button"
                     class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
