@@ -6,7 +6,9 @@ def home(request):
     # return HttpResponse("Hello World. You are at my personal collection home page")
 
 def about(request):
-    return HttpResponse("Hello World. You are at my personal collection about page")
+    return render(request, 'website/about.html')
+    # return HttpResponse("Hello World. You are at my personal collection about page")
 
 def contact(request):
-    return HttpResponse("Hello World. You are at my personal collection contact page")
+    return render(request, 'website/contact.html')
+    # return HttpResponse("Hello World. You are at my personal collection contact page")
