@@ -1,15 +1,11 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collection Hobby</title>
-    <link rel="stylesheet" href="{% static 'style.css' %}">
-</head>
-<body>
-    <h1>Currency and Coin Collection Hobby </h1>
+{% extends "layout.html" %}
 
+{% block title %}
+Collection Hobby
+{% endblock %}
+
+{% block content %}
+<h1>Currency and Coin Collection Hobby </h1>
     <div class="intro">
         <h2>Welcome to My World of Currency</h2>
         <p>
@@ -58,5 +54,4 @@
         Send me a message or follow along as I continue to grow my collection.
       </p>
     </div>
-</body>
-</html>
+{% endblock %}
