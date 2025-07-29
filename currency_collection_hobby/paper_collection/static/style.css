@@ -8,6 +8,8 @@ body {
 h1 {
     text-align: center;
     font-size: 2em;
+    color: red;
+    text-decoration: underline;
 }
 
 .intro, .why-collect, .connect {

@@ -5,25 +5,37 @@ All Fractional
 {% endblock %}
 
 {% block content %}
-<h1>Fractional Currency </h1>
-<div class="grid grid-cols-3 gap-4 m-4">
-    {% for fractional in fractionals  %}
-        <div class="bg-blue-800 p-5 rounded">
-            <img class="rouded shadow-lg h-100 w-[100%]" src="{{fractional.image.url}}" alt="" />
-            <span> Name: {{fractional.name}} </span> </br>
-            <span> Year: {{fractional.year}} </span> </br>
-            <span> Amount Paid: {{fractional.price_paid}} </span> </br>
-            <span> Issue: {{fractional.issue}} </span> </br>
-            <a href="{% url 'fractional_detail' fractional.id %}">
-                <button
-                    type="button"
-                    class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
-                    text-white bg-orange-600 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
-                >
-                {{fractional.type}} - {{fractional.id}}
-                </button>
-            </a>
-        </div>
-    {% endfor %}
+<div class="container mx-auto px-6 py-12">
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {% for fractional in fractionals  %}
+            <div class="bg-white shadow-lg rounded-2xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+                <div class="relative">
+                    <img
+                        src="{{fractional.image.url}}" alt="{{ fractional.name }}"
+                        class="w-full h-100 object-cover group-hover:scale-105 transition-transform duration-300"
+                    >
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">{{ fractional.name }}</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ fractional.year }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Issue: {{ fractional.issue }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ fractional.year }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">FR #: {{ fractional.fr_number }}</p>
+
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">${{ fractional.price_paid }}</span>
+                        <a href="{% url 'fractional_detail' fractional.id %}">
+                            <button
+                                class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
+                                text-white bg-orange-600 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                            >
+                                {{fractional.type}} - {{fractional.id}}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 {% endblock %}
