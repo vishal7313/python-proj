@@ -20,6 +20,7 @@ class fractionalCurrencyVariety(models.Model):
     ]
     name = models.CharField(max_length=100)
     year = models.CharField(max_length=100, default='2025')
+    portrait = models.CharField(max_length=100, default='')
     fr_number = models.IntegerField(default=0, help_text="Fr Number.")
     price_paid = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     image = models.ImageField(upload_to='fractional_currencies/')
