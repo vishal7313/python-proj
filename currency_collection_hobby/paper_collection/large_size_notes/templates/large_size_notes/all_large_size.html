@@ -1,11 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Large Size Notes</title>
-</head>
-<body>
-    <h1>All Large Size Notes </h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+All Large Size notes
+{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-6 py-12">
+    <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {% for largenote in largenotes  %}
+            <div class="bg-white shadow-lg rounded-2xl overflow-hidden group hover:shadow-2xl transition-shadow duration-300">
+                <div class="relative">
+                    <img
+                        src="{{largenote.image.url}}" alt="{{ largenote.name }}"
+                        class="w-full h-100 object-cover group-hover:scale-105 transition-transform duration-300"
+                    >
+                </div>
+                <div class="p-4">
+                    <h3 class="text-lg font-semibold text-gray-800">{{ largenote.name }}</h3>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ largenote.year }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Issue: {{ largenote.issue }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Portrait: {{ largenote.portrait }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ largenote.year }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">FR #: {{ largenote.fr_number }}</p>
+
+                    <div class="mt-4 flex items-center justify-between">
+                        <span class="text-xl font-bold text-green-600">${{ largenote.price_paid }}</span>
+                        <a href="{% url 'largenote_detail' largenote.id %}">
+                            <button
+                                class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
+                                text-white bg-orange-600 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
+                            >
+                                {{largenote.type}} - {{largenote.id}}
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
