@@ -4,13 +4,13 @@ from django.utils import timezone
 # Create your models here.
 class largeSizeCurrencyVariety(models.Model):
     LARGE_SIZE_TYPE = [
-        ('1', 'Gold Certificates'),
-        ('2', 'Silver Certificates'),
-        ('3', 'Legal Tender'),
-        ('4', 'Federal Reserve Bank Note'),
-        ('5', 'Federal Reserve Note'),
-        ('6', 'Treasury or Coin Note'),
-        ('7', 'National Bank Note'),
+        ('Gold Certificates', 'Gold Certificates'),
+        ('Silver Certificates', 'Silver Certificates'),
+        ('Legal Tender', 'Legal Tender'),
+        ('Federal Reserve Bank Note', 'Federal Reserve Bank Note'),
+        ('Federal Reserve Note5', 'Federal Reserve Note'),
+        ('Treasury or Coin Note', 'Treasury or Coin Note'),
+        ('National Bank Note', 'National Bank Note'),
     ]
 
     DENOMINATION = [

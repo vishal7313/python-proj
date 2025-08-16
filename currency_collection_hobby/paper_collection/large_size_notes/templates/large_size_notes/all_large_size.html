@@ -18,8 +18,8 @@ All Large Size notes
                 <div class="p-4">
                     <h3 class="text-lg font-semibold text-gray-800">{{ largenote.name }}</h3>
                     <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ largenote.year }}</p>
-                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Issue: {{ largenote.issue }}</p>
-                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Portrait: {{ largenote.portrait }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Type: {{ largenote.type }}</p>
+                    <p class="text-sm text-gray-500 line-clamp-2 mt-1">Denomination: {{ largenote.denomination }}</p>
                     <p class="text-sm text-gray-500 line-clamp-2 mt-1">Year: {{ largenote.year }}</p>
                     <p class="text-sm text-gray-500 line-clamp-2 mt-1">FR #: {{ largenote.fr_number }}</p>
 
@@ -30,7 +30,7 @@ All Large Size notes
                                 class="inline-flex items-center w-[100%] justify-center px-4 py-2 border border-transparent text-sm font-medium rounded-md
                                 text-white bg-orange-600 hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500"
                             >
-                                {{largenote.type}} - {{largenote.id}}
+                               More info on {{largenote.name}}
                             </button>
                         </a>
                     </div>
