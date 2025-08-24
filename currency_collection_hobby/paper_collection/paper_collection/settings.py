@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'fractional_currency',
     'large_size_notes',
+    'small_size_notes',
     'tailwind',
     'theme',
     'django_browser_reload',
