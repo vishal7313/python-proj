@@ -27,6 +27,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('fractional_currency/', include('fractional_currency.urls')),
     path('large_size_notes/', include('large_size_notes.urls')),
+    path('small_size_notes/', include('small_size_notes.urls')),
 
     
     path("__reload__/", include("django_browser_reload.urls")),

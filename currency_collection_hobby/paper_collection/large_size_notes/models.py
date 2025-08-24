@@ -25,6 +25,7 @@ class largeSizeCurrencyVariety(models.Model):
     name = models.CharField(max_length=100)
     year = models.CharField(max_length=100, default='2025')
     fr_number = models.IntegerField(default=0, help_text="Fr Number.")
+    serial_number = models.CharField(default='', max_length=32)
     price_paid = models.DecimalField(max_digits=10, decimal_places=2, default=0.00)
     image = models.ImageField(upload_to='large_size_notes_inventory/')
     date_added = models.DateTimeField(default=timezone.now)
